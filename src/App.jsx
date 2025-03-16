@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
@@ -35,6 +33,8 @@ function App() {
     setCart(cart.filter((item) => item.id !== id));
   };
 
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
   return (
     <div className="cart">
       <h2>Shopping Cart</h2>
@@ -57,7 +57,7 @@ function App() {
             </div>
           ))}
           <div className="cart-total">
-            <h3>Total: </h3>
+            <h3>Total: ${total}</h3>
           </div>
         </>
       )}
