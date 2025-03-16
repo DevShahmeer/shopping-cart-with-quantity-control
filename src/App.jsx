@@ -10,6 +10,7 @@ function App() {
     { id: 3, name: "Headphones", price: 199, quantity: 1 },
   ]);
 
+  // Function to increase item quantity by 1
   const increaseQuantity = (id) => {
     setCart(
       cart.map((item) =>
@@ -18,6 +19,7 @@ function App() {
     );
   };
 
+  // Function to decrease item quantity by 1, but not below 1
   const decreaseQuantity = (id) => {
     setCart(
       cart.map((item) =>
@@ -26,6 +28,11 @@ function App() {
           : item
       )
     );
+  };
+
+  // Function to completely remove an item from the cart
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
   };
 
   return <></>;
