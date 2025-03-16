@@ -35,7 +35,34 @@ function App() {
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  return <></>;
+  return (
+    <div className="cart">
+      <h2>Shopping Cart</h2>
+      {cart.length === 0 ? (
+        <p>Your cart is empty</p>
+      ) : (
+        <>
+          {cart.map((item) => (
+            <div key={item.id} className="cart-item">
+              <div>
+                <h3>{item.name}</h3>
+                <p>${item.price}</p>
+              </div>
+              <div className="quantity-controls">
+                <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => increaseQuantity(item.id)}>+</button>
+                <button onClick={() => removeItem(item.id)}>Remove</button>
+              </div>
+            </div>
+          ))}
+          <div className="cart-total">
+            <h3>Total: </h3>
+          </div>
+        </>
+      )}
+    </div>
+  );
 }
 
 export default App;
