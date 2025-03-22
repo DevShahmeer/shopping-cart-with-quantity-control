@@ -144,9 +144,6 @@ You can customize the appearance of the cart by modifying the CSS variables in `
 - Include product images
 - Add checkout functionality
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Author
 
